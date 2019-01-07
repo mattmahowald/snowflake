@@ -40,16 +40,16 @@ class TrackSelector extends React.Component<Props> {
         `}</style>
         <tbody>
           <tr>
-            {trackIds.map(trackId => (
+            {Object.keys(tracks).map(trackId => (
               <td key={trackId} className="track-selector-label" onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
-                {this.props.tracks[trackId].displayName}
+                {tracks[trackId].displayName}
               </td>
             ))}
           </tr>
           <tr>
-            {trackIds.map(trackId => (
+            {Object.keys(tracks).map(trackId => (
               <td key={trackId} className="track-selector-value"
-                  style={{border: '4px solid ' + (trackId == this.props.focusedTrackId ? '#000': categoryColorScale(this.props.tracks[trackId].category)), background: categoryColorScale(this.props.tracks[trackId].category)}}
+                  style={{border: '4px solid ' + (trackId == this.props.focusedTrackId ? '#000': categoryColorScale(tracks[trackId].category)), background: categoryColorScale(tracks[trackId].category)}}
                   onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
                 {this.props.milestoneByTrack[trackId]}
               </td>

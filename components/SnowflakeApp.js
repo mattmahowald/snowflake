@@ -50,7 +50,7 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'MOBILE': 0,
+      /*'MOBILE': 0,*/
       'WEB_CLIENT': 0,
       'FOUNDATIONS': 0,
       'SERVERS': 0,
@@ -67,16 +67,16 @@ const emptyState = (): SnowflakeAppState => {
       'RECRUITING': 0,
       'COMMUNITY': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'CRAFT'
   }
 }
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
-    title: 'Staff Engineer',
+    name: 'Marshawn T. Goat',
+    title: 'Senior Engineer',
     milestoneByTrack: {
-      'MOBILE': 1,
+      /*'MOBILE': 1,*/
       'WEB_CLIENT': 2,
       'FOUNDATIONS': 3,
       'SERVERS': 2,
@@ -93,7 +93,7 @@ const defaultState = (): SnowflakeAppState => {
       'RECRUITING': 3,
       'COMMUNITY': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'CRAFT'
   }
 }
 
@@ -155,7 +155,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
             text-decoration: none;
           }
         `}</style>
-        <div style={{margin: '19px auto 0', width: 142}}>
+        <div style={{margin: '19px auto 0', width: 95}}>
           <a href="https://medium.com/" target="_blank">
             <Wordmark />
           </a>
@@ -180,14 +180,12 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           </div>
           <div style={{flex: 0}}>
             <NightingaleChart
-                tracks={this.props.tracks}
                 milestoneByTrack={this.state.milestoneByTrack}
                 focusedTrackId={this.state.focusedTrackId}
                 handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
           </div>
         </div>
         <TrackSelector
-            tracks={this.props.tracks}
             milestoneByTrack={this.state.milestoneByTrack}
             focusedTrackId={this.state.focusedTrackId}
             setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)} />
