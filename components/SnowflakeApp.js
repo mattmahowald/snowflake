@@ -180,12 +180,14 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           </div>
           <div style={{flex: 0}}>
             <NightingaleChart
+                tracks={this.props.tracks}
                 milestoneByTrack={this.state.milestoneByTrack}
                 focusedTrackId={this.state.focusedTrackId}
                 handleTrackMilestoneChangeFn={(track, milestone) => this.handleTrackMilestoneChange(track, milestone)} />
           </div>
         </div>
         <TrackSelector
+            tracks={this.props.tracks}
             milestoneByTrack={this.state.milestoneByTrack}
             focusedTrackId={this.state.focusedTrackId}
             setFocusedTrackIdFn={this.setFocusedTrackId.bind(this)} />
