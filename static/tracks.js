@@ -50,7 +50,7 @@
         "Upgraded CocoaPods to a new major version",
         "Designed architecture for fetching and rendering stream items",
         "Migrated Android persistance layer to reactive programming"
-      ],
+      ]
     }, {
       "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
       "signals": [
