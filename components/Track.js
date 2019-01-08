@@ -44,6 +44,9 @@ class Track extends React.Component<Props> {
             border-radius: 3px;
             cursor: pointer;
           }
+          td:hover {
+            border-color: #000 !important;
+          }
           ul {
             line-height: 1.5em;
           }

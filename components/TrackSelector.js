@@ -33,6 +33,9 @@ class TrackSelector extends React.Component<Props> {
             border-radius: 3px;
             cursor: pointer;
           }
+          .track-selector-value:hover {
+            border-color: #000 !important;
+          }
           .track-selector-label {
             text-align: center;
             font-size: 9px;
