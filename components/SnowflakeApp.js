@@ -192,6 +192,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
         <KeyboardListener
             selectNextTrackFn={this.shiftFocusedTrack.bind(this, 1)}
             selectPrevTrackFn={this.shiftFocusedTrack.bind(this, -1)}
+            setFocusedMilestoneFn={this.setFocusedTrackMilestoneById.bind(this)}
             increaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, 1)}
             decreaseFocusedMilestoneFn={this.shiftFocusedTrackMilestoneByDelta.bind(this, -1)} />
         <Track
@@ -229,6 +230,10 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
     let index = trackIds.indexOf(trackId)
     const focusedTrackId = trackIds[index]
     this.setState({ focusedTrackId })
+  }
+
+  setFocusedTrackMilestoneById(milestone: number) {
+    this.handleTrackMilestoneChange(this.state.focusedTrackId, milestone)
   }
 
   shiftFocusedTrackMilestoneByDelta(delta: number) {
