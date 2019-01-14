@@ -14,10 +14,12 @@
   "scripts": {
     "dev": "node buildTracks.js && next",
     "export": "node buildTracks.js && next build && next export",
-    "flow": "flow"
+    "flow": "flow",
+    "deploy": "gh-pages -t -d out"
   },
   "devDependencies": {
+    "csvtojson": "^2.0.8",
     "flow-bin": "^0.57.2",
-    "csvtojson": "^2.0.8"
+    "gh-pages": "^2.0.1"
   }
 }
