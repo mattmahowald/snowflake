@@ -16,7 +16,7 @@ type Props = {
 
 class NightingaleChart extends React.Component<Props> {
   colorScale: any
-  radiusScale: any
+  milestoneRadiusScales: any
   arcFn: any
 
   constructor(props: *) {
@@ -25,14 +25,48 @@ class NightingaleChart extends React.Component<Props> {
     this.colorScale = d3.scaleSequential(d3.interpolateWarm)
       .domain([0, 5])
 
-    this.radiusScale = d3.scaleBand()
-      .domain(arcMilestones)
-      .range([.15 * width, .45 * width])
-      .paddingInner(0.1)
+    const getMinRangeOffset = (milestone) => {
+      const offSet = 0.15;
+      switch (milestone) {
+        case 1:
+          return offSet + 0;
+        case 2:
+          return offSet + 0.016;
+        case 3:
+          return offSet + 0.04;
+        case 4:
+          return offSet + 0.1;
+        case 5:
+          return offSet + 0.12;
+      }
+    }
+
+    const getMaxRangeOffset = (milestone) => {
+      const offSet = 0.45;
+      switch (milestone) {
+        case 1:
+          return offSet + 0.15;
+        case 2:
+          return offSet + 0.07;
+        case 3:
+          return offSet + 0.035;
+        case 4:
+          return offSet + 0;
+        case 5:
+          return offSet + 0;
+      }
+    }
+
+    this.milestoneRadiusScales = arcMilestones.map((milestone) => {
+      return d3.scaleBand()
+        .domain(arcMilestones)
+        .range([getMinRangeOffset(milestone) * width, getMaxRangeOffset(milestone) * width])
+        .paddingInner(0.1)
+    })
 
     this.arcFn = d3.arc()
-      .innerRadius(milestone => this.radiusScale(milestone))
-      .outerRadius(milestone => this.radiusScale(milestone) + this.radiusScale.bandwidth())
+      .innerRadius(milestone => this.milestoneRadiusScales[milestone-1](milestone))
+      .outerRadius(milestone => this.milestoneRadiusScales[milestone-1](milestone) + this.milestoneRadiusScales[milestone-1].bandwidth())
       .startAngle(- Math.PI / trackIds.length)
       .endAngle(Math.PI / trackIds.length)
       .padAngle(Math.PI / 200)
@@ -69,6 +103,7 @@ class NightingaleChart extends React.Component<Props> {
               return (
                 <g key={trackId} transform={`rotate(${i * 360 / trackIds.length})`}>
                   {arcMilestones.map((milestone) => {
+                    const mstone = 0.5 * milestone;
                     const isCurrentMilestone = isCurrentTrack && milestone == currentMilestoneId
                     const isMet = this.props.milestoneByTrack[trackId] >= milestone || milestone == 0
                     return (
