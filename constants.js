@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 import importedTracks from './tracks';
 
 export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
-  'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
+  'DELIVERY' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
   'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
@@ -13,7 +13,7 @@ export type MilestoneMap = {
   'WEB_CLIENT': Milestone,
   'FOUNDATIONS': Milestone,
   'SERVERS': Milestone,
-  'PROJECT_MANAGEMENT': Milestone,
+  'DELIVERY': Milestone,
   'COMMUNICATION': Milestone,
   'CRAFT': Milestone,
   'INITIATIVE': Milestone,
@@ -50,7 +50,7 @@ export const pointsToLevels = {
   '36': '3.1',
   '43': '3.2',
   '50': '3.3',
-  '58': '4.1',
+  '62': '4.1',
   '66': '4.2',
   '74': '4.3',
   '90': '5.1',
@@ -76,7 +76,7 @@ type Tracks = {|
   'WEB_CLIENT': Track,
   'FOUNDATIONS': Track,
   'SERVERS': Track,
-  'PROJECT_MANAGEMENT': Track,
+  'DELIVERY': Track,
   'COMMUNICATION': Track,
   'CRAFT': Track,
   'INITIATIVE': Track,
@@ -129,9 +129,9 @@ export const categoryColorScale = d3.scaleOrdinal()
 export const titles = [
   {label: 'Engineer I', minPoints: 0, maxPoints: 16},
   {label: 'Engineer II', minPoints: 17, maxPoints: 35},
-  {label: 'Senior Engineer', minPoints: 36, maxPoints: 57},
+  {label: 'Senior Engineer', minPoints: 36, maxPoints: 61},
   {label: 'Manager', minPoints: 36, maxPoints: 57},
-  {label: 'Staff Engineer', minPoints: 58, maxPoints: 89},
+  {label: 'Staff Engineer', minPoints: 62, maxPoints: 89},
   {label: 'Senior Manager', minPoints: 58, maxPoints: 89},
   {label: 'Principal Engineer', minPoints: 90},
   {label: 'Director of Engineering', minPoints: 90}
