@@ -39,9 +39,16 @@ class TrackSelector extends React.Component<Props> {
           .track-selector-label {
             text-align: center;
             font-size: 9px;
+            border-radius: 3px;
           }
         `}</style>
         <tbody>
+          <tr>
+              <td colspan="3" className="track-selector-label" style={{backgroundColor: '#37B067'}}>Building</td>
+              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#6296BC'}}>Executing</td>
+              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#EDB40D'}}>Supporting</td>
+              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#7FD7C1'}}>Strengthening</td>
+          </tr>
           <tr>
             {Object.keys(tracks).map(trackId => (
               <td key={trackId} className="track-selector-label" onClick={() => this.props.setFocusedTrackIdFn(trackId)}>
