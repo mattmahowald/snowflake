@@ -44,10 +44,10 @@ class TrackSelector extends React.Component<Props> {
         `}</style>
         <tbody>
           <tr>
-              <td colspan="3" className="track-selector-label" style={{backgroundColor: '#37B067'}}>Building</td>
-              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#6296BC'}}>Executing</td>
-              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#EDB40D'}}>Supporting</td>
-              <td colspan="4" className="track-selector-label" style={{backgroundColor: '#7FD7C1'}}>Strengthening</td>
+              <td colSpan="3" className="track-selector-label" style={{backgroundColor: '#37B067'}}>Building</td>
+              <td colSpan="4" className="track-selector-label" style={{backgroundColor: '#6296BC'}}>Executing</td>
+              <td colSpan="4" className="track-selector-label" style={{backgroundColor: '#EDB40D'}}>Supporting</td>
+              <td colSpan="4" className="track-selector-label" style={{backgroundColor: '#7FD7C1'}}>Strengthening</td>
           </tr>
           <tr>
             {Object.keys(tracks).map(trackId => (
