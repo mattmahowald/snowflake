@@ -44,8 +44,8 @@ export const pointsToLevels = {
   '0': '1',
   '17': '2',
   '36': '3',
-  '62': '4',
-  '90': '5',
+  '49': '4',
+  '62': '5',
 }
 
 export const maxLevel = 135
@@ -119,11 +119,11 @@ export const categoryColorScale = d3.scaleOrdinal()
 export const titles = [
   {label: 'Engineer I', minPoints: 0, maxPoints: 16},
   {label: 'Engineer II', minPoints: 17, maxPoints: 35},
-  {label: 'Senior Engineer', minPoints: 36, maxPoints: 61},
+  {label: 'Senior Engineer I', minPoints: 36, maxPoints: 48},
   {label: 'Manager', minPoints: 36, maxPoints: 57},
-  {label: 'Staff Engineer', minPoints: 62, maxPoints: 89},
+  {label: 'Senior Engineer II', minPoints: 49, maxPoints: 61},
   {label: 'Senior Manager', minPoints: 58, maxPoints: 89},
-  {label: 'Principal Engineer', minPoints: 90},
+  {label: 'Staff Engineer', minPoints: 62},
   {label: 'Director of Engineering', minPoints: 90}
 ]
 

@@ -74,24 +74,24 @@ const emptyState = (): SnowflakeAppState => {
 const defaultState = (): SnowflakeAppState => {
   return {
     name: 'Marshawn T. Goat',
-    title: 'Senior Engineer',
+    title: 'Senior Engineer I',
     milestoneByTrack: {
       /*'MOBILE': 1,*/
-      'WEB_CLIENT': 2,
+      'WEB_CLIENT': 1,
       'FOUNDATIONS': 3,
       'SERVERS': 2,
-      'PROJECT_MANAGEMENT': 4,
-      'COMMUNICATION': 1,
-      'CRAFT': 1,
-      'INITIATIVE': 4,
-      'CAREER_DEVELOPMENT': 3,
-      'ORG_DESIGN': 2,
-      'WELLBEING': 0,
-      'ACCOMPLISHMENT': 4,
+      'PROJECT_MANAGEMENT': 2,
+      'COMMUNICATION': 2,
+      'CRAFT': 2,
+      'INITIATIVE': 3,
+      'CAREER_DEVELOPMENT': 1,
+      'ORG_DESIGN': 1,
+      'WELLBEING': 1,
+      'ACCOMPLISHMENT': 2,
       'MENTORSHIP': 2,
       'EVANGELISM': 2,
       'RECRUITING': 3,
-      'COMMUNITY': 0
+      'COMMUNITY': 1
     },
     focusedTrackId: 'CRAFT'
   }
