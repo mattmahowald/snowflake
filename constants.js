@@ -122,7 +122,7 @@ export const titles = [
   {label: 'Senior Engineer I', minPoints: 36, maxPoints: 48},
   {label: 'Manager', minPoints: 36, maxPoints: 57},
   {label: 'Senior Engineer II', minPoints: 49, maxPoints: 61},
-  {label: 'Senior Manager', minPoints: 58, maxPoints: 89},
+  {label: 'Manager', minPoints: 58, maxPoints: 89},
   {label: 'Staff Engineer', minPoints: 62},
   {label: 'Director of Engineering', minPoints: 90}
 ]
